@@ -120,17 +120,47 @@ function Buyers() {
 }
 
 function Sellers() {
+  const item: React.CSSProperties = { marginBottom: 8 };
+  const card: React.CSSProperties = { background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: 16, marginTop: 12 };
+
   return (
     <div style={{ padding: 20 }}>
       <h1 style={{ color: "#1d4ed8" }}>Seller Resources</h1>
       <p style={{ color: "#334155", fontSize: 18, lineHeight: 1.6, maxWidth: 900 }}>
-        Selling in the Triangle? I’ll help you prep, price, and present your home for the strongest
-        offers. This page will include a simple prep checklist, pricing strategy overview, and how I
-        market listings to stand out.
+        Selling in Raleigh/Durham and across the Triangle? I’ll help you prep, price, and present your home
+        to maximize interest and achieve a strong result with minimal hassle.
       </p>
+
+      <div style={card}>
+        <h2 style={{ color: "#0f172a", fontSize: 20, marginBottom: 10 }}>Smart Prep Checklist</h2>
+        <ul style={{ color: "#334155", paddingLeft: 18, margin: 0 }}>
+          <li style={item}>Declutter key rooms; remove excess furniture to open up space</li>
+          <li style={item}>Fix easy wins (loose handles, touch-up paint, squeaky doors)</li>
+          <li style={item}>Enhance curb appeal (fresh mulch, trimmed shrubs, clean entry)</li>
+          <li style={item}>Deep clean kitchens/baths; brighten with fresh white towels</li>
+          <li style={item}>Neutralize strong odors; add light, simple staging accents</li>
+          <li style={item}>Gather records (upgrades, service history, utility averages)</li>
+        </ul>
+      </div>
+
+      <div style={card}>
+        <h2 style={{ color: "#0f172a", fontSize: 20, marginBottom: 10 }}>Pricing & Strategy</h2>
+        <p style={{ color: "#334155", margin: 0 }}>
+          I’ll provide a data-driven comparative market analysis (CMA), recommend a launch strategy,
+          and review offer terms so you’re confident at every step.
+        </p>
+      </div>
+
+      <div style={card}>
+        <h2 style={{ color: "#0f172a", fontSize: 20, marginBottom: 10 }}>Request Your CMA</h2>
+        <p style={{ color: "#334155", marginTop: 0 }}>
+          Want a clear picture of your home’s value and timeline? Use the Contact page and include your address—I'll follow up with a tailored CMA.
+        </p>
+      </div>
     </div>
   );
 }
+
 
 
 /* ------- Shared styles ------- */
