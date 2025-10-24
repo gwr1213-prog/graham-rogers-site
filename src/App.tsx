@@ -65,6 +65,7 @@ function About() {
 }
 
 function Contact() {
+
   return (
     <div style={{ padding: 20 }}>
       <h1 style={{ color: "#1d4ed8" }}>Contact Graham Rogers</h1>
@@ -105,6 +106,33 @@ function Contact() {
   );
 }
 
+function Buyers() {
+  return (
+    <div style={{ padding: 20 }}>
+      <h1 style={{ color: "#1d4ed8" }}>Buyer Resources</h1>
+      <p style={{ color: "#334155", fontSize: 18, lineHeight: 1.6, maxWidth: 900 }}>
+        Whether you’re a first-time buyer or moving up, this page will help you prepare for a
+        successful home purchase in the Triangle market. More tools and guidance will be added here,
+        including lender contacts, timelines, and a step-by-step buyer guide.
+      </p>
+    </div>
+  );
+}
+
+function Sellers() {
+  return (
+    <div style={{ padding: 20 }}>
+      <h1 style={{ color: "#1d4ed8" }}>Seller Resources</h1>
+      <p style={{ color: "#334155", fontSize: 18, lineHeight: 1.6, maxWidth: 900 }}>
+        Selling in the Triangle? I’ll help you prep, price, and present your home for the strongest
+        offers. This page will include a simple prep checklist, pricing strategy overview, and how I
+        market listings to stand out.
+      </p>
+    </div>
+  );
+}
+
+
 /* ------- Shared styles ------- */
 
 const input: React.CSSProperties = {
@@ -118,7 +146,9 @@ const input: React.CSSProperties = {
 /* ------- App (simple tab nav) ------- */
 
 export default function App() {
-  const [page, setPage] = useState<"home" | "about" | "contact">("home");
+const [page, setPage] = useState<"home" | "about" | "buyers" | "sellers" | "contact">("home");
+
+
 
   return (
     <div style={{ fontFamily: "sans-serif", backgroundColor: "#f8fafc", minHeight: "100vh" }}>
@@ -136,18 +166,25 @@ export default function App() {
         }}
       >
         <h2 style={{ margin: 0 }}>Graham Rogers, REALTOR®</h2>
-        <nav>
-          <button onClick={() => setPage("home")} style={navBtn(page === "home")}>Home</button>
-          <button onClick={() => setPage("about")} style={navBtn(page === "about")}>About</button>
-          <button onClick={() => setPage("contact")} style={navBtn(page === "contact")}>Contact</button>
-        </nav>
+       <nav>
+        <button onClick={() => setPage("home")} style={navBtn(page === "home")}>Home</button>
+        <button onClick={() => setPage("about")} style={navBtn(page === "about")}>About</button>
+        <button onClick={() => setPage("buyers")} style={navBtn(page === "buyers")}>Buyers</button>
+        <button onClick={() => setPage("sellers")} style={navBtn(page === "sellers")}>Sellers</button>
+        <button onClick={() => setPage("contact")} style={navBtn(page === "contact")}>Contact</button>
+      </nav>
+
+
       </header>
 
       <main style={{ maxWidth: 1000, margin: "0 auto", padding: 20 }}>
         {page === "home" && <Home />}
         {page === "about" && <About />}
+        {page === "buyers" && <Buyers />}
+        {page === "sellers" && <Sellers />}
         {page === "contact" && <Contact />}
-      </main>
+     </main>
+
 
       <footer
         style={{
