@@ -107,17 +107,58 @@ function Contact() {
 }
 
 function Buyers() {
+  const card: React.CSSProperties = { background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: 16, marginTop: 12 };
+  const item: React.CSSProperties = { marginBottom: 8 };
+
   return (
     <div style={{ padding: 20 }}>
       <h1 style={{ color: "#1d4ed8" }}>Buyer Resources</h1>
       <p style={{ color: "#334155", fontSize: 18, lineHeight: 1.6, maxWidth: 900 }}>
-        Whether you’re a first-time buyer or moving up, this page will help you prepare for a
-        successful home purchase in the Triangle market. More tools and guidance will be added here,
-        including lender contacts, timelines, and a step-by-step buyer guide.
+        Whether this is your first home or your fifth, here’s a simple path to get ready, tour smart, and write a
+        confident offer in the Triangle market.
       </p>
+
+      <div style={card}>
+        <h2 style={{ color: "#0f172a", fontSize: 20, marginBottom: 10 }}>Quick-Start Steps</h2>
+        <ul style={{ color: "#334155", paddingLeft: 18, margin: 0 }}>
+          <li style={item}>Clarify must-haves vs. nice-to-haves (beds, baths, commute, yard, schools).</li>
+          <li style={item}>Get pre-approved (not just pre-qualified) to know your true budget.</li>
+          <li style={item}>Set a search area: Raleigh, Durham, Cary, Garner, Knightdale, Clayton, Fuquay-Varina, Wake Forest, Holly Springs.</li>
+          <li style={item}>Watch monthly costs: mortgage, taxes, insurance, HOA, utilities, maintenance.</li>
+        </ul>
+      </div>
+
+      <div style={card}>
+        <h2 style={{ color: "#0f172a", fontSize: 20, marginBottom: 10 }}>Touring Tips</h2>
+        <ul style={{ color: "#334155", paddingLeft: 18, margin: 0 }}>
+          <li style={item}>Look past staging—focus on roof/HVAC age, windows, moisture, grading, crawlspace access.</li>
+          <li style={item}>Check layout flow, natural light, storage, noise, parking.</li>
+          <li style={item}>Note commute at your actual travel time; visit the street morning/evening.</li>
+          <li style={item}>Estimate near-term projects (paint, flooring, fixtures) to plan budget.</li>
+        </ul>
+      </div>
+
+      <div style={card}>
+        <h2 style={{ color: "#0f172a", fontSize: 20, marginBottom: 10 }}>Offer Strategy</h2>
+        <ul style={{ color: "#334155", paddingLeft: 18, margin: 0 }}>
+          <li style={item}>We’ll review comps and days-on-market to price your offer with data.</li>
+          <li style={item}>Strengthen terms: due diligence/earnest money, timeline, contingencies.</li>
+          <li style={item}>Ask for what matters: seller paid items, repairs, appliance inclusions.</li>
+          <li style={item}>Keep a clean contract and communicate clearly to reduce seller risk.</li>
+        </ul>
+      </div>
+
+      <div style={card}>
+        <h2 style={{ color: "#0f172a", fontSize: 20, marginBottom: 10 }}>Next Up</h2>
+        <p style={{ color: "#334155", marginTop: 0 }}>
+          I’ll connect you with trusted local lenders and inspectors, and we’ll add a simple mortgage calculator here.
+          When you’re ready to tour, use the Contact page to share days/times that work best.
+        </p>
+      </div>
     </div>
   );
 }
+
 
 function Sellers() {
   const item: React.CSSProperties = { marginBottom: 8 };
