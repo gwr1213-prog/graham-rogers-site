@@ -202,6 +202,52 @@ function Sellers() {
   );
 }
 
+function Testimonials() {
+  const card: React.CSSProperties = { background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: 16, marginTop: 12 };
+
+  return (
+    <div style={{ padding: 20 }}>
+      <h1 style={{ color: "#1d4ed8" }}>Testimonials</h1>
+      <p style={{ color: "#334155", fontSize: 18, lineHeight: 1.6, maxWidth: 900 }}>
+        A few words from folks I’ve helped in the Triangle. I’m grateful for the trust clients place in me as their REALTOR®.
+      </p>
+
+      {/* Short example */}
+      <div style={card}>
+        <blockquote style={{ borderLeft: "4px solid #2563eb", paddingLeft: 12, margin: 0, color: "#334155" }}>
+          “Clear communication and attention to detail from start to finish. We felt informed and supported at every step.”
+          <footer style={{ marginTop: 8, fontSize: 14, color: "#475569" }}>— Satisfied Client</footer>
+        </blockquote>
+      </div>
+
+      {/* Full review from John A. Kappler III */}
+      <div style={card}>
+        <blockquote style={{ borderLeft: "4px solid #2563eb", paddingLeft: 12, margin: 0, color: "#334155" }}>
+          <p style={{ marginTop: 0 }}>
+            This was my first time buying a home, so I needed a lot of guidance. It's not a simple process by any means, but Graham took care of everything.
+            His diligence allowed me and my wife the time and energy to put all our focus into searching for homes.
+          </p>
+          <p>
+            Graham was always ready to set up house tours, and he was great at accommodating our varied schedules. As a former contractor and long-time Raleigh resident, he knows what to look out for.
+            His insights and expertise go well beyond average.
+          </p>
+          <p>
+            Aside from being well-versed vis-a-vis house matters, Graham is personable and patient. He fielded my many questions like a champ and genuinely wanted to share his wisdom. I feel as though my house knowledge increased several fold during this journey.
+          </p>
+          <p>
+            After a months-long search, in the end, it was Graham who spotted the home we chose. He paid careful attention to our preferences and vision for the future and was able to find the perfect place for us.
+            It's been a little over a month since we moved in, and we're ecstatic.
+          </p>
+          <p>
+            I'm incredibly grateful to Graham for his kindness, guidance, and support. If you retain Graham as an agent, you can be certain that he'll put your needs before all else.
+            He's also a skilled gardener who grows everything under the sun; he will share the love.
+          </p>
+          <footer style={{ marginTop: 8, fontSize: 14, color: "#475569" }}>— John A. Kappler III</footer>
+        </blockquote>
+      </div>
+    </div>
+  );
+}
 
 
 /* ------- Shared styles ------- */
@@ -217,7 +263,8 @@ const input: React.CSSProperties = {
 /* ------- App (simple tab nav) ------- */
 
 export default function App() {
-const [page, setPage] = useState<"home" | "about" | "buyers" | "sellers" | "contact">("home");
+const [page, setPage] = useState<"home" | "about" | "buyers" | "sellers" | "testimonials" | "contact">("home");
+
 
 
 
@@ -242,6 +289,7 @@ const [page, setPage] = useState<"home" | "about" | "buyers" | "sellers" | "cont
         <button onClick={() => setPage("about")} style={navBtn(page === "about")}>About</button>
         <button onClick={() => setPage("buyers")} style={navBtn(page === "buyers")}>Buyers</button>
         <button onClick={() => setPage("sellers")} style={navBtn(page === "sellers")}>Sellers</button>
+        <button onClick={() => setPage("testimonials")} style={navBtn(page === "testimonials")}> Testimonials</button>
         <button onClick={() => setPage("contact")} style={navBtn(page === "contact")}>Contact</button>
       </nav>
 
@@ -252,7 +300,8 @@ const [page, setPage] = useState<"home" | "about" | "buyers" | "sellers" | "cont
         {page === "home" && <Home />}
         {page === "about" && <About />}
         {page === "buyers" && <Buyers />}
-        {page === "sellers" && <Sellers />}
+        {page === "sellers" && <Sellers />}  
+        {page === "testimonials" && <Testimonials />}
         {page === "contact" && <Contact />}
      </main>
 
