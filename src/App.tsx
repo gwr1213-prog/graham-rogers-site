@@ -5,27 +5,36 @@ import React, { useState } from "react";
 function Home() {
   return (
     <div style={{ padding: 20 }}>
-      <h1 style={{ color: "#1d4ed8" }}>Welcome to Graham Rogers Real Estate</h1>
-      <p style={{ color: "#334155" }}>
-        Buying or selling a home is more than a transaction — it's a major life step. My focus is on delivering personal
-        service, with clear communication and Triangle market knowledge.
-      </p>
-
+      {/* Full-width skyline image */}
       <img
         src="/images/raleigh-hero.jpg"
         alt="Raleigh skyline at sunset"
         style={{
           width: "100%",
-          height: 220,
+          height: 380,
           objectFit: "cover",
           borderRadius: 16,
-          marginTop: 16,
           display: "block",
+          marginBottom: 24,
         }}
       />
+
+      {/* Headline under the image */}
+      <h1 style={{ color: "#1d4ed8", fontSize: 36, marginBottom: 12 }}>
+        Local Expertise. Personal Service. Real Results.
+      </h1>
+
+      {/* Supporting text */}
+      <p style={{ color: "#334155", fontSize: 18, lineHeight: 1.6, maxWidth: 900 }}>
+        Helping buyers and sellers navigate the Triangle market with clear communication,
+        professional guidance, and results-focused service — from first conversation
+        through closing day.
+      </p>
     </div>
   );
 }
+
+
 
 function About() {
   return (

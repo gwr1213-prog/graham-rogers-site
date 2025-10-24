@@ -1,8 +1,7 @@
 export default function Home() {
   return (
     <div style={{ padding: "20px" }}>
-      <h1>Welcome to Graham Rogers Real Estate</h1>
-      <p>Buying or selling a home is more than a transaction — it's a major life step.</p>
+   
      <img
 src="/images/raleigh-hero.jpg"
   alt="Raleigh skyline at sunset"
