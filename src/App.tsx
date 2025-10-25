@@ -248,6 +248,75 @@ function Testimonials() {
     </div>
   );
 }
+function MarketTrends() {
+  const card: React.CSSProperties = {
+    background: "#fff",
+    border: "1px solid #e5e7eb",
+    borderRadius: 12,
+    padding: 16,
+    marginTop: 12,
+  };
+  const row: React.CSSProperties = { display: "flex", gap: 16, flexWrap: "wrap" };
+  const tile: React.CSSProperties = {
+    flex: "1 1 220px",
+    background: "#f8fafc",
+    border: "1px solid #e5e7eb",
+    borderRadius: 12,
+    padding: 16,
+  };
+
+  return (
+    <div style={{ padding: 20 }}>
+      <h1 style={{ color: "#1d4ed8" }}>Triangle Market Trends</h1>
+      <p style={{ color: "#334155", fontSize: 18, lineHeight: 1.6, maxWidth: 900 }}>
+        A quick snapshot of what&apos;s happening around Raleigh/Durham and the Triangle.
+        I update this page monthly. If you need a neighborhood-specific read, reach out and
+        I&apos;ll pull a custom report.
+      </p>
+
+      {/* KPI tiles (manual entry for now) */}
+      <div style={{ ...row, marginTop: 12 }}>
+        <div style={tile}>
+          <div style={{ color: "#475569", fontSize: 14 }}>Median Sale Price</div>
+          <div style={{ color: "#0f172a", fontSize: 24, fontWeight: 700 }}>$—</div>
+          <div style={{ color: "#64748b", fontSize: 12 }}>Raleigh/Durham (Monthly)</div>
+        </div>
+        <div style={tile}>
+          <div style={{ color: "#475569", fontSize: 14 }}>Days on Market</div>
+          <div style={{ color: "#0f172a", fontSize: 24, fontWeight: 700 }}>—</div>
+          <div style={{ color: "#64748b", fontSize: 12 }}>Median (Monthly)</div>
+        </div>
+        <div style={tile}>
+          <div style={{ color: "#475569", fontSize: 14 }}>List-to-Sale Ratio</div>
+          <div style={{ color: "#0f172a", fontSize: 24, fontWeight: 700 }}>—%</div>
+          <div style={{ color: "#64748b", fontSize: 12 }}>All property types</div>
+        </div>
+      </div>
+
+      {/* Notes / Highlights */}
+      <div style={card}>
+        <h2 style={{ color: "#0f172a", fontSize: 20, marginBottom: 10 }}>This Month&apos;s Notes</h2>
+        <ul style={{ color: "#334155", paddingLeft: 18, margin: 0 }}>
+          <li>Inventory: — (tightening / steady / loosening).</li>
+          <li>Buyer activity: — (strong weekend traffic / more weekdays / seasonal shift).</li>
+          <li>Pricing: — (stable / selective reductions / multiple offers common in X–Y price bands).</li>
+        </ul>
+      </div>
+
+      {/* Upload/Link Area for your monthly PDF */}
+      <div style={card}>
+        <h2 style={{ color: "#0f172a", fontSize: 20, marginBottom: 10 }}>Monthly Report (PDF)</h2>
+        <p style={{ color: "#334155", marginTop: 0 }}>
+          I post a fresh PDF each month. If you&apos;d like this delivered to your inbox, use the Contact page and ask for the monthly update.
+        </p>
+        {/* Placeholder link you can update later */}
+        <a href="#" onClick={(e) => e.preventDefault()} style={{ color: "#2563eb", textDecoration: "underline" }}>
+          View latest PDF (coming soon)
+        </a>
+      </div>
+    </div>
+  );
+}
 
 
 /* ------- Shared styles ------- */
@@ -263,8 +332,9 @@ const input: React.CSSProperties = {
 /* ------- App (simple tab nav) ------- */
 
 export default function App() {
-const [page, setPage] = useState<"home" | "about" | "buyers" | "sellers" | "testimonials" | "contact">("home");
 
+const [page, setPage] = useState<
+  "home" | "about" | "buyers" | "sellers" | "testimonials" | "market" | "contact">("home");
 
 
 
@@ -285,13 +355,15 @@ const [page, setPage] = useState<"home" | "about" | "buyers" | "sellers" | "test
       >
         <h2 style={{ margin: 0 }}>Graham Rogers, REALTOR®</h2>
        <nav>
-        <button onClick={() => setPage("home")} style={navBtn(page === "home")}>Home</button>
-        <button onClick={() => setPage("about")} style={navBtn(page === "about")}>About</button>
-        <button onClick={() => setPage("buyers")} style={navBtn(page === "buyers")}>Buyers</button>
-        <button onClick={() => setPage("sellers")} style={navBtn(page === "sellers")}>Sellers</button>
-        <button onClick={() => setPage("testimonials")} style={navBtn(page === "testimonials")}> Testimonials</button>
-        <button onClick={() => setPage("contact")} style={navBtn(page === "contact")}>Contact</button>
-      </nav>
+  <button onClick={() => setPage("home")} style={navBtn(page === "home")}>Home</button>
+  <button onClick={() => setPage("about")} style={navBtn(page === "about")}>About</button>
+  <button onClick={() => setPage("buyers")} style={navBtn(page === "buyers")}>Buyers</button>
+  <button onClick={() => setPage("sellers")} style={navBtn(page === "sellers")}>Sellers</button>
+  <button onClick={() => setPage("testimonials")} style={navBtn(page === "testimonials")}>Testimonials</button>
+  <button onClick={() => setPage("market")} style={navBtn(page === "market")}>Market Trends</button>
+  <button onClick={() => setPage("contact")} style={navBtn(page === "contact")}>Contact</button>
+</nav>
+
 
 
       </header>
@@ -302,6 +374,7 @@ const [page, setPage] = useState<"home" | "about" | "buyers" | "sellers" | "test
         {page === "buyers" && <Buyers />}
         {page === "sellers" && <Sellers />}  
         {page === "testimonials" && <Testimonials />}
+        {page === "market" && <MarketTrends />}
         {page === "contact" && <Contact />}
      </main>
 
