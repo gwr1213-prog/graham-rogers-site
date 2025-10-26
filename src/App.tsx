@@ -363,6 +363,10 @@ export default function App() {
   <button onClick={() => setPage("sellers")} style={navBtn(page === "sellers")}>Sellers</button>
   <button onClick={() => setPage("testimonials")} style={navBtn(page === "testimonials")}>Testimonials</button>
   <button onClick={() => setPage("market")} style={navBtn(page === "market")}>Market Trends</button>
+  <button onClick={() => setPage("calculator")} style={navBtn(page === "calculator")}>
+  Mortgage Calculator
+</button>
+
   <button onClick={() => setPage("contact")} style={navBtn(page === "contact")}>Contact</button>
 </nav>
 
