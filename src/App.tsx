@@ -5,18 +5,24 @@ import About from "./About";
 import MortgageCalculator from "./MortgageCalculator";
 import Contact from "./Contact";
 
-/* ------- Inline pages that don't have their own files ------- */
+/* ------- Inline pages that don't have their own files yet ------- */
 
 function Buyers() {
-  const card: React.CSSProperties = { background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: 16, marginTop: 12 };
+  const card: React.CSSProperties = {
+    background: "#fff",
+    border: "1px solid #e5e7eb",
+    borderRadius: 12,
+    padding: 16,
+    marginTop: 12,
+  };
   const item: React.CSSProperties = { marginBottom: 8 };
 
   return (
     <div style={{ padding: 20 }}>
       <h1 style={{ color: "#1d4ed8" }}>Buyer Resources</h1>
       <p style={{ color: "#334155", fontSize: 18, lineHeight: 1.6, maxWidth: 900 }}>
-        Whether this is your first home or your fifth, here’s a simple path to get ready, tour smart, and write a
-        confident offer in the Triangle market.
+        Whether this is your first home or your fifth, here’s a simple path to get ready, tour smart,
+        and write a confident offer in the Triangle market.
       </p>
 
       <div style={card}>
@@ -24,7 +30,10 @@ function Buyers() {
         <ul style={{ color: "#334155", paddingLeft: 18, margin: 0 }}>
           <li style={item}>Clarify must-haves vs. nice-to-haves (beds, baths, commute, yard, schools).</li>
           <li style={item}>Get pre-approved (not just pre-qualified) to know your true budget.</li>
-          <li style={item}>Set a search area: Raleigh, Durham, Cary, Garner, Knightdale, Clayton, Fuquay-Varina, Wake Forest, Holly Springs.</li>
+          <li style={item}>
+            Set a search area: Raleigh, Durham, Cary, Garner, Knightdale, Clayton, Fuquay-Varina,
+            Wake Forest, Holly Springs.
+          </li>
           <li style={item}>Watch monthly costs: mortgage, taxes, insurance, HOA, utilities, maintenance.</li>
         </ul>
       </div>
@@ -32,7 +41,7 @@ function Buyers() {
       <div style={card}>
         <h2 style={{ color: "#0f172a", fontSize: 20, marginBottom: 10 }}>Touring Tips</h2>
         <ul style={{ color: "#334155", paddingLeft: 18, margin: 0 }}>
-          <li style={item}>Look past staging—focus on roof/HVAC age, windows, moisture, grading, crawlspace access.</li>
+          <li style={item}>Look past staging—focus on roof/HVAC age, windows, moisture, grading, crawlspace.</li>
           <li style={item}>Check layout flow, natural light, storage, noise, parking.</li>
           <li style={item}>Note commute at your actual travel time; visit the street morning/evening.</li>
           <li style={item}>Estimate near-term projects (paint, flooring, fixtures) to plan budget.</li>
@@ -43,7 +52,7 @@ function Buyers() {
         <h2 style={{ color: "#0f172a", fontSize: 20, marginBottom: 10 }}>Offer Strategy</h2>
         <ul style={{ color: "#334155", paddingLeft: 18, margin: 0 }}>
           <li style={item}>We’ll review comps and days-on-market to price your offer with data.</li>
-          <li style={item}>Strengthen terms: due diligence/earnest money, timeline, contingencies.</li>
+          <li style={item}>Strengthen terms: DD/EM money, timeline, contingencies.</li>
           <li style={item}>Ask for what matters: seller paid items, repairs, appliance inclusions.</li>
           <li style={item}>Keep a clean contract and communicate clearly to reduce seller risk.</li>
         </ul>
@@ -52,8 +61,8 @@ function Buyers() {
       <div style={card}>
         <h2 style={{ color: "#0f172a", fontSize: 20, marginBottom: 10 }}>Next Up</h2>
         <p style={{ color: "#334155", marginTop: 0 }}>
-          I’ll connect you with trusted local lenders and inspectors, and we’ll add a simple mortgage calculator here.
-          When you’re ready to tour, use the Contact page to share days/times that work best.
+          I’ll connect you with trusted local lenders and inspectors. When you’re ready to tour,
+          use the Contact page to share days/times that work best.
         </p>
       </div>
     </div>
@@ -61,41 +70,48 @@ function Buyers() {
 }
 
 function Sellers() {
+  const card: React.CSSProperties = {
+    background: "#fff",
+    border: "1px solid #e5e7eb",
+    borderRadius: 12,
+    padding: 16,
+    marginTop: 12,
+  };
   const item: React.CSSProperties = { marginBottom: 8 };
-  const card: React.CSSProperties = { background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: 16, marginTop: 12 };
 
   return (
     <div style={{ padding: 20 }}>
       <h1 style={{ color: "#1d4ed8" }}>Seller Resources</h1>
       <p style={{ color: "#334155", fontSize: 18, lineHeight: 1.6, maxWidth: 900 }}>
-        Selling in Raleigh/Durham and across the Triangle? I’ll help you prep, price, and present your home
-        to maximize interest and achieve a strong result with minimal hassle.
+        Selling in Raleigh/Durham and across the Triangle? I’ll help you prep, price, and present
+        your home to maximize interest and achieve a strong result with minimal hassle.
       </p>
 
       <div style={card}>
         <h2 style={{ color: "#0f172a", fontSize: 20, marginBottom: 10 }}>Smart Prep Checklist</h2>
         <ul style={{ color: "#334155", paddingLeft: 18, margin: 0 }}>
-          <li style={item}>Declutter key rooms; remove excess furniture to open up space</li>
-          <li style={item}>Fix easy wins (loose handles, touch-up paint, squeaky doors)</li>
-          <li style={item}>Enhance curb appeal (fresh mulch, trimmed shrubs, clean entry)</li>
-          <li style={item}>Deep clean kitchens/baths; brighten with fresh white towels</li>
-          <li style={item}>Neutralize strong odors; add light, simple staging accents</li>
-          <li style={item}>Gather records (upgrades, service history, utility averages)</li>
+          <li style={item}>Declutter key rooms; remove excess furniture to open up space.</li>
+          <li style={item}>Fix easy wins (loose handles, touch-up paint, squeaky doors).</li>
+          <li style={item}>Enhance curb appeal (fresh mulch, trimmed shrubs, clean entry).</li>
+          <li style={item}>Deep clean kitchens/baths; brighten with fresh white towels.</li>
+          <li style={item}>Neutralize strong odors; add light, simple staging accents.</li>
+          <li style={item}>Gather records (upgrades, service history, utility averages).</li>
         </ul>
       </div>
 
       <div style={card}>
         <h2 style={{ color: "#0f172a", fontSize: 20, marginBottom: 10 }}>Pricing & Strategy</h2>
         <p style={{ color: "#334155", margin: 0 }}>
-          I’ll provide a data-driven comparative market analysis (CMA), recommend a launch strategy,
-          and review offer terms so you’re confident at every step.
+          I’ll provide a data-driven CMA, recommend a launch strategy, and review offer terms so you’re
+          confident at every step.
         </p>
       </div>
 
       <div style={card}>
         <h2 style={{ color: "#0f172a", fontSize: 20, marginBottom: 10 }}>Request Your CMA</h2>
         <p style={{ color: "#334155", marginTop: 0 }}>
-          Want a clear picture of your home’s value and timeline? Use the Contact page and include your address—I'll follow up with a tailored CMA.
+          Want a clear picture of your home’s value and timeline? Use the Contact page and include your
+          address—I'll follow up with a tailored CMA.
         </p>
       </div>
     </div>
@@ -103,18 +119,26 @@ function Sellers() {
 }
 
 function Testimonials() {
-  const card: React.CSSProperties = { background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: 16, marginTop: 12 };
+  const card: React.CSSProperties = {
+    background: "#fff",
+    border: "1px solid #e5e7eb",
+    borderRadius: 12,
+    padding: 16,
+    marginTop: 12,
+  };
 
   return (
     <div style={{ padding: 20 }}>
       <h1 style={{ color: "#1d4ed8" }}>Testimonials</h1>
       <p style={{ color: "#334155", fontSize: 18, lineHeight: 1.6, maxWidth: 900 }}>
-        A few words from folks I’ve helped in the Triangle. I’m grateful for the trust clients place in me as their REALTOR®.
+        A few words from folks I’ve helped in the Triangle. I’m grateful for the trust clients place
+        in me as their REALTOR®.
       </p>
 
       <div style={card}>
         <blockquote style={{ borderLeft: "4px solid #2563eb", paddingLeft: 12, margin: 0, color: "#334155" }}>
-          “Clear communication and attention to detail from start to finish. We felt informed and supported at every step.”
+          “Clear communication and attention to detail from start to finish. We felt informed and
+          supported at every step.”
           <footer style={{ marginTop: 8, fontSize: 14, color: "#475569" }}>— Satisfied Client</footer>
         </blockquote>
       </div>
@@ -122,23 +146,8 @@ function Testimonials() {
       <div style={card}>
         <blockquote style={{ borderLeft: "4px solid #2563eb", paddingLeft: 12, margin: 0, color: "#334155" }}>
           <p style={{ marginTop: 0 }}>
-            This was my first time buying a home, so I needed a lot of guidance. It's not a simple process by any means, but Graham took care of everything.
-            His diligence allowed me and my wife the time and energy to put all our focus into searching for homes.
-          </p>
-          <p>
-            Graham was always ready to set up house tours, and he was great at accommodating our varied schedules. As a former contractor and long-time Raleigh resident, he knows what to look out for.
-            His insights and expertise go well beyond average.
-          </p>
-          <p>
-            Aside from being well-versed vis-a-vis house matters, Graham is personable and patient. He fielded my many questions like a champ and genuinely wanted to share his wisdom. I feel as though my house knowledge increased several fold during this journey.
-          </p>
-          <p>
-            After a months-long search, in the end, it was Graham who spotted the home we chose. He paid careful attention to our preferences and vision for the future and was able to find the perfect place for us.
-            It's been a little over a month since we moved in, and we're ecstatic.
-          </p>
-          <p>
-            I'm incredibly grateful to Graham for his kindness, guidance, and support. If you retain Graham as an agent, you can be certain that he'll put your needs before all else.
-            He's also a skilled gardener who grows everything under the sun; he will share the love.
+            This was my first time buying a home, so I needed a lot of guidance. Graham took care of everything
+            and helped us focus on the right homes. His local knowledge and construction background were invaluable.
           </p>
           <footer style={{ marginTop: 8, fontSize: 14, color: "#475569" }}>— John A. Kappler III</footer>
         </blockquote>
@@ -168,9 +177,8 @@ function MarketTrends() {
     <div style={{ padding: 20 }}>
       <h1 style={{ color: "#1d4ed8" }}>Triangle Market Trends</h1>
       <p style={{ color: "#334155", fontSize: 18, lineHeight: 1.6, maxWidth: 900 }}>
-        A quick snapshot of what’s happening around Raleigh/Durham and the Triangle.
-        I update this page monthly. If you need a neighborhood-specific read, reach out and
-        I’ll pull a custom report.
+        A quick snapshot of what’s happening around Raleigh/Durham and the Triangle. If you need a
+        neighborhood-specific read, reach out and I’ll pull a custom report.
       </p>
 
       <div style={{ ...row, marginTop: 12 }}>
@@ -192,18 +200,10 @@ function MarketTrends() {
       </div>
 
       <div style={card}>
-        <h2 style={{ color: "#0f172a", fontSize: 20, marginBottom: 10 }}>This Month’s Notes</h2>
-        <ul style={{ color: "#334155", paddingLeft: 18, margin: 0 }}>
-          <li>Inventory: —</li>
-          <li>Buyer activity: —</li>
-          <li>Pricing: —</li>
-        </ul>
-      </div>
-
-      <div style={card}>
         <h2 style={{ color: "#0f172a", fontSize: 20, marginBottom: 10 }}>Monthly Report (PDF)</h2>
         <p style={{ color: "#334155", marginTop: 0 }}>
-          I post a fresh PDF each month. If you’d like this delivered to your inbox, use the Contact page and ask for the monthly update.
+          I post a fresh PDF each month. If you’d like this delivered to your inbox, use the Contact
+          page and ask for the monthly update.
         </p>
         <a href="#" onClick={(e) => e.preventDefault()} style={{ color: "#2563eb", textDecoration: "underline" }}>
           View latest PDF (coming soon)
@@ -213,7 +213,7 @@ function MarketTrends() {
   );
 }
 
-/* ------- helper for nav button style ------- */
+/* ------- Helper for nav button style ------- */
 function navBtn(active: boolean): React.CSSProperties {
   return {
     background: "none",
