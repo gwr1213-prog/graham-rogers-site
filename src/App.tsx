@@ -333,9 +333,10 @@ const input: React.CSSProperties = {
 
 export default function App() {
 
-<button onClick={() => setPage("calculator")} style={navBtn(page === "calculator")}>
-  Calculator
-</button>
+
+const [page, setPage] = useState<
+  "home" | "about" | "buyers" | "sellers" | "testimonials" | "market" | "calculator" | "contact"
+>("home");
 
 
 
