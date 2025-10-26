@@ -1,110 +1,11 @@
 import React, { useState } from "react";
 
-/* ------- Pages (inline to keep it simple) ------- */
+import Home from "./Home";
+import About from "./About";
+import MortgageCalculator from "./MortgageCalculator";
+import Contact from "./Contact";
 
-function Home() {
-  return (
-    <div style={{ padding: 20 }}>
-      {/* Full-width skyline image */}
-      <img
-        src="/images/raleigh-hero.jpg"
-        alt="Raleigh skyline at sunset"
-        style={{
-          width: "100%",
-          height: 380,
-          objectFit: "cover",
-          borderRadius: 16,
-          display: "block",
-          marginBottom: 24,
-        }}
-      />
-
-      {/* Headline under the image */}
-      <h1 style={{ color: "#1d4ed8", fontSize: 36, marginBottom: 12 }}>
-        Local Expertise. Personal Service. Real Results.
-      </h1>
-
-      {/* Supporting text */}
-      <p style={{ color: "#334155", fontSize: 18, lineHeight: 1.6, maxWidth: 900 }}>
-        Helping buyers and sellers navigate the Triangle market with clear communication,
-        professional guidance, and results-focused service — from first conversation
-        through closing day.
-      </p>
-    </div>
-  );
-}
-
-
-
-function About() {
-  return (
-    <div style={{ padding: 20 }}>
-      <h1 style={{ color: "#1d4ed8" }}>About Graham Rogers, REALTOR®</h1>
-      <p style={{ color: "#334155" }}>
-        I'm Graham Rogers, a REALTOR® serving Raleigh/Durham and the Triangle. My background includes construction,
-        project management, leading technical operations teams, and training both technical and customer service
-        professionals. That experience sharpened my eye for detail and keeps the process organized and low-stress for you.
-      </p>
-
-      {/* Headshot – no crop */}
-      <img
-        src="/images/graham-headshot.png"
-        alt="Graham Rogers headshot"
-        style={{
-          maxWidth: 300,
-          width: "100%",
-          height: "auto",      // shows full image
-          borderRadius: 16,
-          objectFit: "contain",
-          display: "block",
-          marginTop: 20,
-        }}
-      />
-    </div>
-  );
-}
-
-function Contact() {
-
-  return (
-    <div style={{ padding: 20 }}>
-      <h1 style={{ color: "#1d4ed8" }}>Contact Graham Rogers</h1>
-
-      <form
-        action="https://formspree.io/f/xvgwbyag"
-        method="POST"
-        style={{ display: "flex", flexDirection: "column", maxWidth: 420, gap: 10 }}
-      >
-        <label>First Name</label>
-        <input type="text" name="firstName" required style={input} />
-
-        <label>Last Name</label>
-        <input type="text" name="lastName" required style={input} />
-
-        <label>Email</label>
-        <input type="email" name="email" required style={input} />
-
-        <label>Message</label>
-        <textarea name="message" rows={4} required style={{ ...input, resize: "vertical" }} />
-
-        <button
-          type="submit"
-          style={{
-            background: "#2563eb",
-            color: "#fff",
-            border: "1px solid #1d4ed8",
-            borderRadius: 12,
-            padding: "10px 16px",
-            cursor: "pointer",
-            marginTop: 6,
-          }}
-        >
-          Send
-        </button>
-      </form>
-    </div>
-  );
-}
+/* ------- Inline pages that don't have their own files ------- */
 
 function Buyers() {
   const card: React.CSSProperties = { background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: 16, marginTop: 12 };
@@ -159,7 +60,6 @@ function Buyers() {
   );
 }
 
-
 function Sellers() {
   const item: React.CSSProperties = { marginBottom: 8 };
   const card: React.CSSProperties = { background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: 16, marginTop: 12 };
@@ -212,7 +112,6 @@ function Testimonials() {
         A few words from folks I’ve helped in the Triangle. I’m grateful for the trust clients place in me as their REALTOR®.
       </p>
 
-      {/* Short example */}
       <div style={card}>
         <blockquote style={{ borderLeft: "4px solid #2563eb", paddingLeft: 12, margin: 0, color: "#334155" }}>
           “Clear communication and attention to detail from start to finish. We felt informed and supported at every step.”
@@ -220,7 +119,6 @@ function Testimonials() {
         </blockquote>
       </div>
 
-      {/* Full review from John A. Kappler III */}
       <div style={card}>
         <blockquote style={{ borderLeft: "4px solid #2563eb", paddingLeft: 12, margin: 0, color: "#334155" }}>
           <p style={{ marginTop: 0 }}>
@@ -248,6 +146,7 @@ function Testimonials() {
     </div>
   );
 }
+
 function MarketTrends() {
   const card: React.CSSProperties = {
     background: "#fff",
@@ -269,12 +168,11 @@ function MarketTrends() {
     <div style={{ padding: 20 }}>
       <h1 style={{ color: "#1d4ed8" }}>Triangle Market Trends</h1>
       <p style={{ color: "#334155", fontSize: 18, lineHeight: 1.6, maxWidth: 900 }}>
-        A quick snapshot of what&apos;s happening around Raleigh/Durham and the Triangle.
+        A quick snapshot of what’s happening around Raleigh/Durham and the Triangle.
         I update this page monthly. If you need a neighborhood-specific read, reach out and
-        I&apos;ll pull a custom report.
+        I’ll pull a custom report.
       </p>
 
-      {/* KPI tiles (manual entry for now) */}
       <div style={{ ...row, marginTop: 12 }}>
         <div style={tile}>
           <div style={{ color: "#475569", fontSize: 14 }}>Median Sale Price</div>
@@ -293,23 +191,20 @@ function MarketTrends() {
         </div>
       </div>
 
-      {/* Notes / Highlights */}
       <div style={card}>
-        <h2 style={{ color: "#0f172a", fontSize: 20, marginBottom: 10 }}>This Month&apos;s Notes</h2>
+        <h2 style={{ color: "#0f172a", fontSize: 20, marginBottom: 10 }}>This Month’s Notes</h2>
         <ul style={{ color: "#334155", paddingLeft: 18, margin: 0 }}>
-          <li>Inventory: — (tightening / steady / loosening).</li>
-          <li>Buyer activity: — (strong weekend traffic / more weekdays / seasonal shift).</li>
-          <li>Pricing: — (stable / selective reductions / multiple offers common in X–Y price bands).</li>
+          <li>Inventory: —</li>
+          <li>Buyer activity: —</li>
+          <li>Pricing: —</li>
         </ul>
       </div>
 
-      {/* Upload/Link Area for your monthly PDF */}
       <div style={card}>
         <h2 style={{ color: "#0f172a", fontSize: 20, marginBottom: 10 }}>Monthly Report (PDF)</h2>
         <p style={{ color: "#334155", marginTop: 0 }}>
-          I post a fresh PDF each month. If you&apos;d like this delivered to your inbox, use the Contact page and ask for the monthly update.
+          I post a fresh PDF each month. If you’d like this delivered to your inbox, use the Contact page and ask for the monthly update.
         </p>
-        {/* Placeholder link you can update later */}
         <a href="#" onClick={(e) => e.preventDefault()} style={{ color: "#2563eb", textDecoration: "underline" }}>
           View latest PDF (coming soon)
         </a>
@@ -318,28 +213,23 @@ function MarketTrends() {
   );
 }
 
-
-/* ------- Shared styles ------- */
-
-const input: React.CSSProperties = {
-  width: "100%",
-  padding: "12px 14px",
-  borderRadius: 12,
-  border: "1px solid #cbd5e1",
-  outline: "none",
-};
+/* ------- helper for nav button style ------- */
+function navBtn(active: boolean): React.CSSProperties {
+  return {
+    background: "none",
+    border: "none",
+    color: active ? "#60a5fa" : "white",
+    cursor: "pointer",
+    marginLeft: 18,
+    fontSize: 16,
+  };
+}
 
 /* ------- App (simple tab nav) ------- */
-
 export default function App() {
-
-
-const [page, setPage] = useState<
-  "home" | "about" | "buyers" | "sellers" | "testimonials" | "market" | "calculator" | "contact"
->("home");
-
-
-
+  const [page, setPage] = useState<
+    "home" | "about" | "buyers" | "sellers" | "testimonials" | "market" | "calculator" | "contact"
+  >("home");
 
   return (
     <div style={{ fontFamily: "sans-serif", backgroundColor: "#f8fafc", minHeight: "100vh" }}>
@@ -357,35 +247,31 @@ const [page, setPage] = useState<
         }}
       >
         <h2 style={{ margin: 0 }}>Graham Rogers, REALTOR®</h2>
-       <nav>
-  <button onClick={() => setPage("home")} style={navBtn(page === "home")}>Home</button>
-  <button onClick={() => setPage("about")} style={navBtn(page === "about")}>About</button>
-  <button onClick={() => setPage("buyers")} style={navBtn(page === "buyers")}>Buyers</button>
-  <button onClick={() => setPage("sellers")} style={navBtn(page === "sellers")}>Sellers</button>
-  <button onClick={() => setPage("testimonials")} style={navBtn(page === "testimonials")}>Testimonials</button>
-  <button onClick={() => setPage("market")} style={navBtn(page === "market")}>Market Trends</button>
-  <button onClick={() => setPage("calculator")} style={navBtn(page === "calculator")}>
-  Mortgage Calculator
-</button>
 
-  <button onClick={() => setPage("contact")} style={navBtn(page === "contact")}>Contact</button>
-</nav>
-
-
-
+        <nav>
+          <button onClick={() => setPage("home")} style={navBtn(page === "home")}>Home</button>
+          <button onClick={() => setPage("about")} style={navBtn(page === "about")}>About</button>
+          <button onClick={() => setPage("buyers")} style={navBtn(page === "buyers")}>Buyers</button>
+          <button onClick={() => setPage("sellers")} style={navBtn(page === "sellers")}>Sellers</button>
+          <button onClick={() => setPage("testimonials")} style={navBtn(page === "testimonials")}>Testimonials</button>
+          <button onClick={() => setPage("market")} style={navBtn(page === "market")}>Market Trends</button>
+          <button onClick={() => setPage("calculator")} style={navBtn(page === "calculator")}>
+            Mortgage Calculator
+          </button>
+          <button onClick={() => setPage("contact")} style={navBtn(page === "contact")}>Contact</button>
+        </nav>
       </header>
 
       <main style={{ maxWidth: 1000, margin: "0 auto", padding: 20 }}>
         {page === "home" && <Home />}
         {page === "about" && <About />}
         {page === "buyers" && <Buyers />}
-        {page === "sellers" && <Sellers />}  
+        {page === "sellers" && <Sellers />}
         {page === "testimonials" && <Testimonials />}
         {page === "market" && <MarketTrends />}
         {page === "calculator" && <MortgageCalculator />}
         {page === "contact" && <Contact />}
-     </main>
-
+      </main>
 
       <footer
         style={{
@@ -402,13 +288,3 @@ const [page, setPage] = useState<
   );
 }
 
-function navBtn(active: boolean): React.CSSProperties {
-  return {
-    background: "none",
-    border: "none",
-    color: active ? "#60a5fa" : "white",
-    cursor: "pointer",
-    marginLeft: 18,
-    fontSize: 16,
-  };
-}
